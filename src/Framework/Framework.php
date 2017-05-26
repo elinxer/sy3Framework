@@ -2,10 +2,11 @@
 
 namespace Framework;
 
-use Symfony\Component\Debug\Exception\UndefinedMethodException;
+
 use Symfony\Component\HttpKernel;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Debug\Exception\FlattenException;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+
 
 class Framework extends HttpKernel\HttpKernel
 {
@@ -22,11 +23,11 @@ class Framework extends HttpKernel\HttpKernel
         $dispatcher->addSubscriber($makeClas->make('listener.router'));
 
         // 监听捕捉错误信息
-        $dispatcher->addSubscriber(new HttpKernel\EventListener\ExceptionListener(function (FlattenException $exception) {
+        $dispatcher->addSubscriber(new HttpKernel\EventListener\ExceptionListener(function (HttpKernel\Exception\FlattenException $exception) {
             $msg = 'Wrong! ('.$exception->getMessage().')';
             return new Response($msg, $exception->getStatusCode()?:-1024);
         }));
-        $dispatcher->addSubscriber(new HttpKernel\EventListener\ExceptionListener(new UndefinedMethodException('method', new \ErrorException())));
+        $dispatcher->addSubscriber(new HttpKernel\EventListener\ExceptionListener(new RouteNotFoundException()));
 
         $dispatcher->addSubscriber(new HttpKernel\EventListener\ResponseListener('UTF-8'));
         $dispatcher->addSubscriber(new HttpKernel\EventListener\StreamedResponseListener());

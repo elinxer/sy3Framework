@@ -42,10 +42,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
                             [handle] => 0
                             [refCount] => 0
                             [position] => 1
-                            [attr] => Array
-                                (
-                                )
-
                         )
 
                 )
@@ -57,8 +53,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
 
         )
 
-    [position:Symfony\Component\VarDumper\Cloner\Data:private] => 0
-    [key:Symfony\Component\VarDumper\Cloner\Data:private] => 0
     [maxDepth:Symfony\Component\VarDumper\Cloner\Data:private] => 20
     [maxItemsPerDepth:Symfony\Component\VarDumper\Cloner\Data:private] => -1
     [useRefHandles:Symfony\Component\VarDumper\Cloner\Data:private] => -1
@@ -91,10 +85,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
                             [handle] => %i
                             [refCount] => 0
                             [position] => 1
-                            [attr] => Array
-                                (
-                                )
-
                         )
 
                 )
@@ -110,10 +100,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
                             [handle] => %i
                             [refCount] => 0
                             [position] => 2
-                            [attr] => Array
-                                (
-                                )
-
                         )
 
                     [\000+\0002] => Symfony\Component\VarDumper\Cloner\Stub Object
@@ -125,10 +111,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
                             [handle] => %i
                             [refCount] => 0
                             [position] => 3
-                            [attr] => Array
-                                (
-                                )
-
                         )
 
                 )
@@ -145,8 +127,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
 
         )
 
-    [position:Symfony\Component\VarDumper\Cloner\Data:private] => 0
-    [key:Symfony\Component\VarDumper\Cloner\Data:private] => 0
     [maxDepth:Symfony\Component\VarDumper\Cloner\Data:private] => 20
     [maxItemsPerDepth:Symfony\Component\VarDumper\Cloner\Data:private] => -1
     [useRefHandles:Symfony\Component\VarDumper\Cloner\Data:private] => -1
@@ -168,13 +148,13 @@ EOTXT;
         $clone = $cloner->cloneVar($data);
 
         $expected = <<<'EOTXT'
-object(Symfony\Component\VarDumper\Cloner\Data)#%i (6) {
+object(Symfony\Component\VarDumper\Cloner\Data)#%i (4) {
   ["data":"Symfony\Component\VarDumper\Cloner\Data":private]=>
   array(2) {
     [0]=>
     array(1) {
       [0]=>
-      object(Symfony\Component\VarDumper\Cloner\Stub)#%i (8) {
+      object(Symfony\Component\VarDumper\Cloner\Stub)#%i (7) {
         ["type"]=>
         string(5) "array"
         ["class"]=>
@@ -189,15 +169,12 @@ object(Symfony\Component\VarDumper\Cloner\Data)#%i (6) {
         int(0)
         ["position"]=>
         int(1)
-        ["attr"]=>
-        array(0) {
-        }
       }
     }
     [1]=>
     array(1) {
       ["1"]=>
-      object(Symfony\Component\VarDumper\Cloner\Stub)#%i (8) {
+      object(Symfony\Component\VarDumper\Cloner\Stub)#%i (7) {
         ["type"]=>
         string(6) "object"
         ["class"]=>
@@ -212,16 +189,9 @@ object(Symfony\Component\VarDumper\Cloner\Data)#%i (6) {
         int(0)
         ["position"]=>
         int(0)
-        ["attr"]=>
-        array(0) {
-        }
       }
     }
   }
-  ["position":"Symfony\Component\VarDumper\Cloner\Data":private]=>
-  int(0)
-  ["key":"Symfony\Component\VarDumper\Cloner\Data":private]=>
-  int(0)
   ["maxDepth":"Symfony\Component\VarDumper\Cloner\Data":private]=>
   int(20)
   ["maxItemsPerDepth":"Symfony\Component\VarDumper\Cloner\Data":private]=>
@@ -266,10 +236,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
                             [handle] => %i
                             [refCount] => 0
                             [position] => 1
-                            [attr] => Array
-                                (
-                                )
-
                         )
 
                 )
@@ -281,8 +247,6 @@ Symfony\Component\VarDumper\Cloner\Data Object
 
         )
 
-    [position:Symfony\Component\VarDumper\Cloner\Data:private] => 0
-    [key:Symfony\Component\VarDumper\Cloner\Data:private] => 0
     [maxDepth:Symfony\Component\VarDumper\Cloner\Data:private] => 20
     [maxItemsPerDepth:Symfony\Component\VarDumper\Cloner\Data:private] => -1
     [useRefHandles:Symfony\Component\VarDumper\Cloner\Data:private] => -1

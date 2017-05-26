@@ -7,7 +7,6 @@ $sc = new DependencyInjection\ContainerBuilder();
 
 $sc->register('context', 'Symfony\Component\Routing\RequestContext');
 $sc->register('resolver', 'Symfony\Component\HttpKernel\Controller\ControllerResolver');
-$sc->register('stack.request', 'Symfony\Component\HttpFoundation\RequestStack');
 $sc->register('dispatcher', 'Symfony\Component\EventDispatcher\EventDispatcher');
 
 // 注册框架
@@ -22,7 +21,7 @@ $sc->register('matcher', 'Symfony\Component\Routing\Matcher\UrlMatcher')
 
 // 创建路由监听
 $sc->register('listener.router', 'Symfony\Component\HttpKernel\EventListener\RouterListener')
-    ->setArguments(array(new Reference('matcher'), new Reference('stack.request')));
+    ->setArguments(array(new Reference('matcher')));
 
 
 //$sc->register('listener.response', 'Symfony\Component\HttpKernel\EventListener\ResponseListener')

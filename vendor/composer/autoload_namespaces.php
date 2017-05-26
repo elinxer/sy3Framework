@@ -6,4 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Component\\Routing' => array($vendorDir . '/symfony/routing'),
+    'Symfony\\Component\\HttpKernel' => array($vendorDir . '/symfony/http-kernel'),
+    'Symfony\\Component\\HttpFoundation' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\EventDispatcher' => array($vendorDir . '/symfony/event-dispatcher'),
+    'Symfony\\Component\\DependencyInjection' => array($vendorDir . '/symfony/dependency-injection'),
+    'Symfony\\Component\\Config' => array($vendorDir . '/symfony/config'),
+    'SessionHandlerInterface' => array($vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs'),
 );
